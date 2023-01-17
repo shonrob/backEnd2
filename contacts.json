@@ -1,0 +1,24 @@
+{
+    "contact": {
+        "firstName": "Teralyn",
+        "lastName": "Thompson",
+        "email": "tt@gmail.com",
+        "favoriteColor": "Fuscia",
+        "birthday" : "01/01/80"
+    },
+    "contact2": {
+        "firstName": "Sherie",
+        "lastName": "Schmitt",
+        "email": "ss@gmail.com",
+        "favoriteColor": "Neon Orange",
+        "birthday" : "02/02/81"
+    },
+    "contact3": {
+        "firstName": "Tandee",
+        "lastName": "Hicks",
+        "email": "th@gmail.com",
+        "favoriteColor": "Sky Blue",
+        "birthday" : "03/03/82"
+    }
+
+}
