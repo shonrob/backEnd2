@@ -21,7 +21,7 @@ POST http://localhost:3000/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Kaitlyn",
+    "firstName":"Fred",
     "lastName":"Robinson",
     "email":"kr@gmail.com", 
     "favoriteColor":"gold",
@@ -34,7 +34,7 @@ PUT http://localhost:3000/contacts/63cca277a0211eb658391e5f HTTP/1.1
 content-type: application/json
 
 {
-   "firstName":"Tandee",
+   "firstName":"Ralph",
    "lastName":"Hicks",
    "email":"ts@gmail.com",
    "favoriteColor":"silver",

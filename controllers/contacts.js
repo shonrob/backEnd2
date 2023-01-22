@@ -33,16 +33,8 @@ async function getAll(request, response) {
 // a function that will use POST 
     async function createContact (req, res, next) {
         console.log(req.body);
-        const newContact = {
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            favoriteColor: req.body.favoriteColor,
-            birthday: req.body.birthday
-
-        };
-        const response = await mongodb.getDb().db("cse341").collection("contact").insertOne(newContact);
-        // setHeaders(response);
+        const response = await mongodb.getDb().db("cse341").collection("contact").insertOne(req.body);
+        setHeaders(res);
         if (response.acknowledged) {
             res.status(201).json(response);    
         } else {
@@ -54,15 +46,8 @@ async function getAll(request, response) {
 // a function that will update a contact by id through put 
 const updateContacts = async (req, res, next) => {
     const userId = new ObjectId(req.params.id);
-    const reviseContact = {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        favoriteColor: req.body.favoriteColor,
-        birthday: req.body.birthday
-    };
 
-    const response = await mongodb.getDb().db("cse341").collection("contact").replaceOne({_id: ObjectId(req.params.id)}, reviseContact);
+    const response = await mongodb.getDb().db("cse341").collection("contact").replaceOne({_id: userId}, req.body);
     console.log(response);
     setHeaders(res);
     if (response.modifiedCount > 0){
