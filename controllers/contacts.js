@@ -79,5 +79,3 @@ function setHeaders(res) {
 module.exports = {
     getAll, getById, createContact, updateContacts, deleteContact, setHeaders
 }
-
- 
