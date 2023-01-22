@@ -30,9 +30,69 @@ async function getAll(request, response) {
 
 };
 
+// a function that will use POST 
+    async function createContact (req, res, next) {
+        console.log(req.body);
+        const newContact = {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            favoriteColor: req.body.favoriteColor,
+            birthday: req.body.birthday
 
+        };
+        const response = await mongodb.getDb().db("cse341").collection("contact").insertOne(newContact);
+        // setHeaders(response);
+        if (response.acknowledged) {
+            res.status(201).json(response);    
+        } else {
+            res.status(500).json(response.error || "Sorry, error occured when creating contact");
+        }
+        
+    };
+
+// a function that will update a contact by id through put 
+const updateContacts = async (req, res, next) => {
+    const userId = new ObjectId(req.params.id);
+    const reviseContact = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
+    };
+
+    const response = await mongodb.getDb().db("cse341").collection("contact").replaceOne({_id: ObjectId(req.params.id)}, reviseContact);
+    console.log(response);
+    setHeaders(response);
+    if (response.modifiedCount > 0){
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Sorry, there was an error while updating your contact.');
+    }
+};
+
+const deleteContact = async (req, res, next) => {
+    const userId = new ObjectId(req.params.id);
+    const response = await mongodb.getDb().db("cse341").collection("contact").remove({_id: userId}, true); 
+    console.log(response);
+    setHeaders(response);
+    if (response.deletedCount > 0 ) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || "Sorry, there was an error when you tried to delete the contact.");
+    } 
+};
+
+function setHeaders(res) {
+    res.setHeader("content-type", 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+}
 module.exports = {
-    getAll, getById
+    getAll, getById, createContact, updateContacts, deleteContact, setHeaders
 }
 
  
