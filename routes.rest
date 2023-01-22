@@ -21,29 +21,29 @@ POST http://localhost:3000/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Fred",
+    "firstName":"Kaitlyn",
     "lastName":"Robinson",
     "email":"kr@gmail.com", 
-    "favoriteColor":"gold",
+    "favoriteColor":"yellow",
     "birthday":"04/04/1980"
 }
 
 # put routes
 ###
-PUT http://localhost:3000/contacts/63cca277a0211eb658391e5f HTTP/1.1
+PUT http://localhost:3000/contacts/63c08e8877375e1eefcb61e7 HTTP/1.1
 content-type: application/json
 
 {
-   "firstName":"Ralph",
-   "lastName":"Hicks",
+   "firstName":"Tandee",
+   "lastName":"Jones",
    "email":"ts@gmail.com",
-   "favoriteColor":"silver",
+   "favoriteColor":"hot pink",
    "birthday":"05/05/1980"
 }
 
 # delete routes 
 ###
-DELETE http://localhost:3000/contacts/63cca756126732ee70f3e041 HTTP/1.1
+DELETE http://localhost:3000/contacts/ HTTP/1.1
 
 
 
@@ -68,14 +68,14 @@ content-type: application/json
 
 {
     "firstName":"Sarah",
-    "lastName":"Robinson",
+    "lastName":"Jane",
     "email":"sr@gmail.com", 
-    "favoriteColor":"brown",
-    "birthday":"05/05/1980"
+    "favoriteColor":"green",
+    "birthday":"06/05/1980"
 }
 
 ###
-PUT https://cse341node5.onrender.com/contacts/63cca6f0299162a5b501ccae HTTP/1.1
+PUT https://cse341node5.onrender.com/contacts/ HTTP/1.1
 content-type: application/json
 
 {
@@ -87,6 +87,6 @@ content-type: application/json
 }
 
 ###
-DELETE https://cse341node5.onrender.com/contacts/63cca6f0299162a5b501ccae HTTP/1.1
+DELETE https://cse341node5.onrender.com/contacts/ HTTP/1.1
 
 
