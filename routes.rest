@@ -41,6 +41,10 @@ content-type: application/json
    "birthday":"05/05/1980"
 }
 
+# delete routes 
+###
+DELETE http://localhost:3000/contacts/63cca756126732ee70f3e041 HTTP/1.1
+
 
 
 // PRODUCTION DEPLOY TO RENDER
