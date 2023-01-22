@@ -64,7 +64,7 @@ const updateContacts = async (req, res, next) => {
 
     const response = await mongodb.getDb().db("cse341").collection("contact").replaceOne({_id: ObjectId(req.params.id)}, reviseContact);
     console.log(response);
-    setHeaders(response);
+    setHeaders(res);
     if (response.modifiedCount > 0){
         res.status(204).send();
     } else {
@@ -76,9 +76,9 @@ const deleteContact = async (req, res, next) => {
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db("cse341").collection("contact").remove({_id: userId}, true); 
     console.log(response);
-    setHeaders(response);
+    setHeaders(res);
     if (response.deletedCount > 0 ) {
-        res.status(204).send();
+        res.status(200).send();
     } else {
         res.status(500).json(response.error || "Sorry, there was an error when you tried to delete the contact.");
     } 
