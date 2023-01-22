@@ -67,12 +67,26 @@ POST https://cse341node5.onrender.com/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Kaitlyn",
+    "firstName":"Sarah",
     "lastName":"Robinson",
-    "email":"kr@gmail.com", 
-    "favoriteColor":"gold",
-    "birthday":"04/04/1980"
+    "email":"sr@gmail.com", 
+    "favoriteColor":"brown",
+    "birthday":"05/05/1980"
 }
 
+###
+PUT https://cse341node5.onrender.com/contacts/63cca6f0299162a5b501ccae HTTP/1.1
+content-type: application/json
+
+{
+   "firstName":"Henry",
+   "lastName":"Jones",
+   "email":"hj@gmail.com",
+   "favoriteColor":"green",
+   "birthday":"06/06/1980"
+}
+
+###
+DELETE https://cse341node5.onrender.com/contacts/63cca6f0299162a5b501ccae HTTP/1.1
 
 
