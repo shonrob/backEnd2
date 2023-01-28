@@ -5,7 +5,7 @@
     "title": "Contacts API",
     "description": "Documentation to get my contacts"
   },
-  "host": "localhost:3000",
+  "host": "cse341node5.onrender.com",
   "basePath": "",
   "schemes": [],
   "paths": {
