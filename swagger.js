@@ -11,6 +11,18 @@ const doc = {
   schemes: [],   // by default: ['http']
 };
 
+// added this to see if it would work on render. 
+const doc2 = {
+  info: {
+    version: '',      // by default: '1.0.0'
+    title: 'Contacts API',        // by default: 'REST API'
+    description: 'Documentation to get my contacts',  // by default: ''
+  },
+  host: 'cse341node5.onrender.com',      // by default: 'localhost:3000'
+  basePath: '',  // by default: '/'
+  schemes: [],   // by default: ['http']
+};
+
 const outputFile = './swagger-output.json';
 const endpointsFiles = ['./routes/index.js'];
 
@@ -18,4 +30,4 @@ const endpointsFiles = ['./routes/index.js'];
    'endpointsFiles' only the root file where the route starts,
    such as: index.js, app.js, routes.js, ... */
 
-swaggerAutogen(outputFile, endpointsFiles, doc);
+swaggerAutogen(outputFile, endpointsFiles, doc, doc2);
