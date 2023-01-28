@@ -31,3 +31,7 @@ const endpointsFiles = ['./routes/index.js'];
    such as: index.js, app.js, routes.js, ... */
 
 swaggerAutogen(outputFile, endpointsFiles, doc, doc2);
+
+
+
+// in swagger-outputFile.json the host needs to read where you want it to deploy ie local host or on render. 
